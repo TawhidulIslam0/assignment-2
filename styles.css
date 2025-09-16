@@ -1,9 +1,11 @@
-tr,td{
-    border:1px;
-    border-style: solid;
+/* Apply a solid black border of 1px to all table rows and cells */
+tr, td {
+    border: 1px solid black;
 }
-td{
-    height: 50px;
-    width: 50px;
-    background-color: white;
+
+/* Set the height, width, and default background color for all table cells */
+td {
+    height: 50px;              /* Cell height of 50 pixels */
+    width: 50px;               /* Cell width of 50 pixels */
+    background-color: white;   /* Default cell background color */
 }
