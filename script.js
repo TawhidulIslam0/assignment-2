@@ -1,32 +1,21 @@
-// Placeholder functions for menu buttons
-function addR() {
-    alert("Add Row selected");
-}
-
-function addC() {
-    alert("Add Column selected");
-}
-
-function removeR() {
-    alert("Remove Row selected");
-}
-
-function removeC() {
-    alert("Remove Column selected");
+function isCellUncolored(cell) {
+  const bg = window.getComputedStyle(cell).backgroundColor;
+  return bg === "rgb(255, 255, 255)" || bg === "transparent" || bg === "";
 }
 
 function fillU() {
-    alert("Fill All Uncolored selected");
-}
+  if (!colorSelected || colorSelected === "SELECT") {
+    alert("Please select a color first.");
+    return;
+  }
 
-function fillAll() {
-    alert("Fill All selected");
-}
-
-function clearAll() {
-    alert("Clear selected");
-}
-
-function selectColor() {
-    alert("Color selected: " + document.getElementById("selectedColorId").value);
+  const table = document.getElementById('grid');
+  for (let i = 0; i < numRows; i++) {
+    for (let j = 0; j < numCols; j++) {
+      const cell = table.rows[i].cells[j];
+      if (isCellUncolored(cell)) {
+        cell.style.backgroundColor = colorSelected;
+      }
+    }
+  }
 }
