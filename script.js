@@ -1,32 +1,25 @@
-// Placeholder functions for menu buttons
-function addR() {
-    alert("Add Row selected");
-}
+let numRows = 0;
+let numCols = 0;
 
 function addC() {
-    alert("Add Column selected");
-}
+  const table = document.getElementById('grid');
 
-function removeR() {
-    alert("Remove Row selected");
-}
+  // If there are no rows, create the first row and cell
+  if (numRows === 0) {
+    const newRow = table.insertRow();
+    const newCell = newRow.insertCell();
+    initializeCell(newCell);
+    numRows = 1;
+    numCols = 1;
+    return;
+  }
 
-function removeC() {
-    alert("Remove Column selected");
-}
+  // Add a new cell at the end of each existing row
+  for (let i = 0; i < numRows; i++) {
+    const row = table.rows[i];
+    const newCell = row.insertCell();
+    initializeCell(newCell);
+  }
 
-function fillU() {
-    alert("Fill All Uncolored selected");
-}
-
-function fillAll() {
-    alert("Fill All selected");
-}
-
-function clearAll() {
-    alert("Clear selected");
-}
-
-function selectColor() {
-    alert("Color selected: " + document.getElementById("selectedColorId").value);
+  numCols++;
 }
