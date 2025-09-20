@@ -1,32 +1,18 @@
-// Placeholder functions for menu buttons
-function addR() {
-    alert("Add Row selected");
-}
+// Track number of rows and columns
+let numRows = 0;
+let numCols = 0;
 
-function addC() {
-    alert("Add Column selected");
-}
-
+// Remove the last row from the grid
 function removeR() {
-    alert("Remove Row selected");
-}
+    const table = document.getElementById('grid');
 
-function removeC() {
-    alert("Remove Column selected");
-}
+    if (numRows > 0) {
+        table.deleteRow(numRows - 1);
+        numRows--;
 
-function fillU() {
-    alert("Fill All Uncolored selected");
-}
-
-function fillAll() {
-    alert("Fill All selected");
-}
-
-function clearAll() {
-    alert("Clear selected");
-}
-
-function selectColor() {
-    alert("Color selected: " + document.getElementById("selectedColorId").value);
+        // If no rows remain, reset columns to zero
+        if (numRows === 0) {
+            numCols = 0;
+        }
+    }
 }
