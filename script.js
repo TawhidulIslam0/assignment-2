@@ -1,32 +1,21 @@
-// Placeholder functions for menu buttons
-function addR() {
-    alert("Add Row selected");
-}
-
-function addC() {
-    alert("Add Column selected");
-}
-
-function removeR() {
-    alert("Remove Row selected");
-}
-
+// Remove the last column from the grid
 function removeC() {
-    alert("Remove Column selected");
-}
+    const table = document.getElementById('grid');
 
-function fillU() {
-    alert("Fill All Uncolored selected");
-}
+    if (numCols > 0) {
+        // Delete last cell in each row
+        for (let i = 0; i < numRows; i++) {
+            table.rows[i].deleteCell(numCols - 1);
+        }
 
-function fillAll() {
-    alert("Fill All selected");
-}
+        numCols--;
 
-function clearAll() {
-    alert("Clear selected");
-}
-
-function selectColor() {
-    alert("Color selected: " + document.getElementById("selectedColorId").value);
+        // If no columns remain, remove all rows
+        if (numCols === 0) {
+            while (numRows > 0) {
+                table.deleteRow(numRows - 1);
+                numRows--;
+            }
+        }
+    }
 }
