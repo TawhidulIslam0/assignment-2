@@ -1,3 +1,6 @@
+// Track number of rows and columns
+let numRows = 0;
+let numCols = 0;
 // Remove the last column from the grid
 function removeC() {
     const table = document.getElementById('grid');
@@ -19,3 +22,4 @@ function removeC() {
         }
     }
 }
+
