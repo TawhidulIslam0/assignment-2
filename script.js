@@ -1,6 +1,3 @@
-// ==============================
-// Grid Maker JavaScript Script
-// ==============================
 
 // Track the number of rows and columns in the grid
 let numRows = 0;
@@ -9,10 +6,7 @@ let numCols = 0;
 // Store the currently selected color from the dropdown
 let colorSelected = null;
 
-// ==============================
 // Add Row
-// ==============================
-
 function addR() {
   const table = document.getElementById('grid');
   const newRow = table.insertRow();
@@ -33,10 +27,8 @@ function addR() {
   numRows++;
 }
 
-// ==============================
-// Add Column
-// ==============================
 
+// Add Column
 function addC() {
   const table = document.getElementById('grid');
 
@@ -60,10 +52,7 @@ function addC() {
   numCols++;
 }
 
-// ==============================
 // Remove Row
-// ==============================
-
 function removeR() {
   const table = document.getElementById('grid');
 
@@ -78,10 +67,8 @@ function removeR() {
   }
 }
 
-// ==============================
-// Remove Column
-// ==============================
 
+// Remove Column
 function removeC() {
   const table = document.getElementById('grid');
 
@@ -102,18 +89,14 @@ function removeC() {
   }
 }
 
-// ==============================
-// Select Color from Dropdown
-// ==============================
 
+// Select Color from Dropdown
 function selectColor() {
   colorSelected = document.getElementById("selectedColorId").value;
 }
 
-// ==============================
-// Initialize Cell
-// ==============================
 
+// Initialize Cell
 function initializeCell(cell) {
   cell.style.backgroundColor = "white";
 
@@ -125,19 +108,14 @@ function initializeCell(cell) {
   });
 }
 
-// ==============================
-// Check if Cell is Uncolored
-// ==============================
 
+// Check if Cell is Uncolored
 function isCellUncolored(cell) {
   const bg = window.getComputedStyle(cell).backgroundColor;
   return bg === "rgb(255, 255, 255)" || bg === "transparent" || bg === "";
 }
 
-// ==============================
 // Fill All Uncolored Cells
-// ==============================
-
 function fillU() {
   if (!colorSelected || colorSelected === "SELECT") {
     alert("Please select a color first.");
@@ -156,10 +134,8 @@ function fillU() {
   }
 }
 
-// ==============================
-// Fill All Cells
-// ==============================
 
+// Fill All Cells
 function fillAll() {
   if (!colorSelected || colorSelected === "SELECT") {
     alert("Please select a color first.");
@@ -175,10 +151,7 @@ function fillAll() {
   }
 }
 
-// ==============================
 // Clear All Cells
-// ==============================
-
 function clearAll() {
   const table = document.getElementById('grid');
 
@@ -188,3 +161,4 @@ function clearAll() {
     }
   }
 }
+
